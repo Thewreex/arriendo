@@ -12,6 +12,8 @@ public class Cliente {
     public void setCedula(String cedula) {
         if (validarCedula(cedula)) {
             this.cedula = cedula.toUpperCase();
+        } else {
+            mostrarMensaje("Cedula no valida");
         }
     }
 
@@ -30,6 +32,10 @@ public class Cliente {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void mostrarMensaje(String mensaje) {
+        System.out.print(mensaje);
     }
 
 }
