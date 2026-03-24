@@ -1,10 +1,10 @@
-public class Automovil {
+public class Vehiculo {
 import java.time.LocalDate;
 
 // ============================
-// CLASE AUTOMOVIL
+//  Vehiculo
 // ============================
-class Automovil {
+class Vehiculo {
     private String patente;
     private String marca;
     private String modelo;
@@ -37,86 +37,9 @@ class Automovil {
     public String getCondicion() { return condicion; }
 }
 
-// ============================
-// CLASE CLIENTE
-// ============================
-class Cliente {
-    private String cedula;
-    private String nombre;
-    private boolean vigencia;
 
-    public Cliente(String cedula, String nombre) {
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.vigencia = true;
-    }
 
-    public String getCedula() { return cedula; }
-    public String getNombre() { return nombre; }
-    public boolean isVigente() { return vigencia; }
 
-    public void setVigencia(boolean vigencia) {
-        this.vigencia = vigencia;
-    }
-}
-
-// ============================
-// CLASE ARRIENDO
-// ============================
-class Arriendo {
-    private int numeroArriendo;
-    private Automovil vehiculo;
-    private Cliente cliente;
-    private LocalDate fechaArriendo;
-    private int dias;
-    private int monto;
-
-    public Arriendo(int numeroArriendo, Automovil vehiculo, Cliente cliente,
-                    String fechaArriendo, int dias, int monto) {
-
-        this.numeroArriendo = numeroArriendo;
-        this.vehiculo = vehiculo;
-        this.cliente = cliente;
-        this.fechaArriendo = LocalDate.parse(fechaArriendo);
-
-        if (dias > 1 && dias < 10) {
-            this.dias = dias;
-        } else {
-            throw new IllegalArgumentException("Días deben ser entre 2 y 9");
-        }
-
-        this.monto = monto;
-    }
-
-    public int getNumeroArriendo() { return numeroArriendo; }
-    public Automovil getVehiculo() { return vehiculo; }
-    public Cliente getCliente() { return cliente; }
-    public LocalDate getFechaArriendo() { return fechaArriendo; }
-    public int getDias() { return dias; }
-    public int getMonto() { return monto; }
-}
-
-// ============================
-// CLASE DEVOLUCION
-// ============================
-class Devolucion {
-    private Arriendo arriendo;
-    private LocalDate fechaDevolucion;
-
-    public Devolucion(Arriendo arriendo, String fechaDevolucion) {
-        this.arriendo = arriendo;
-        LocalDate fechaDev = LocalDate.parse(fechaDevolucion);
-
-        if (!fechaDev.isBefore(arriendo.getFechaArriendo())) {
-            this.fechaDevolucion = fechaDev;
-        } else {
-            throw new IllegalArgumentException("Fecha de devolución inválida");
-        }
-    }
-
-    public Arriendo getArriendo() { return arriendo; }
-    public LocalDate getFechaDevolucion() { return fechaDevolucion; }
-}
 
 // ============================
 // CLASE PRINCIPAL
