@@ -38,4 +38,8 @@ public class Cliente {
         System.out.print(mensaje);
     }
 
+    public void deshabilitar(boolean vigente) {
+        this.vigente = false;
+    }
+
 }
