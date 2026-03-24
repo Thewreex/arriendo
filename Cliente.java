@@ -34,11 +34,15 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public void mostrarMensaje(String mensaje) {
-        System.out.print(mensaje);
+    public boolean validarNombre(String nombre) {
+        return nombre != null && !nombre.trim().isEmpty();
     }
 
-    public void deshabilitar(boolean vigente) {
+    public void mostrarMensaje(String mensaje) {
+        System.out.println(mensaje);
+    }
+
+    public void deshabilitar() {
         this.vigente = false;
     }
 
