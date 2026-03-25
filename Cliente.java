@@ -46,4 +46,20 @@ public class Cliente {
         this.vigente = false;
     }
 
+    public boolean isVigente() {
+        return vigente;
+    }
+
+    public String getCliente() {
+        return cedula + "/" + nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", vigente=" + vigente +
+                '}';
+    }
 }
